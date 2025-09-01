@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Liberation War Museum Design System - Modern Heritage Theme */
+
+@layer base {
+  :root {
+    /* Core Background & Foreground */
+    --background: 0 0% 98%;
+    --foreground: 155 25% 15%;
+
+    /* Card System */
+    --card: 0 0% 100%;
+    --card-foreground: 155 25% 15%;
+    --card-glass: 0 0% 100% / 0.95;
+
+    /* Popover System */
+    --popover: 0 0% 100%;
+    --popover-foreground: 155 25% 15%;
+
+    /* Heritage Primary - Deep Emerald */
+    --primary: 155 85% 20%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 155 65% 45%;
+    --primary-dark: 155 95% 15%;
+
+    /* Liberation Crimson Accent */
+    --secondary: 0 85% 55%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-light: 0 75% 65%;
+    --secondary-dark: 0 95% 45%;
+
+    /* Muted Tones */
+    --muted: 155 15% 92%;
+    --muted-foreground: 155 20% 45%;
+
+    /* Golden Heritage Accent */
+    --accent: 45 90% 60%;
+    --accent-foreground: 155 25% 15%;
+    --accent-light: 45 85% 75%;
+    --accent-dark: 45 95% 45%;
+
+    /* Alert Colors */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --warning: 35 90% 55%;
+    --success: 155 75% 45%;
+
+    /* Border & Input System */
+    --border: 155 20% 85%;
+    --input: 155 15% 90%;
+    --ring: 155 85% 20%;
+
+    /* Museum Heritage Gradients */
+    --gradient-heritage: linear-gradient(135deg, hsl(155 85% 20%), hsl(155 65% 45%));
+    --gradient-liberation: linear-gradient(135deg, hsl(0 85% 55%), hsl(0 75% 65%));
+    --gradient-golden: linear-gradient(135deg, hsl(45 90% 60%), hsl(45 85% 75%));
+    --gradient-museum: linear-gradient(180deg, hsl(155 25% 15% / 0.9), hsl(155 25% 15% / 0.7));
+    --gradient-glass: linear-gradient(145deg, hsl(0 0% 100% / 0.1), hsl(0 0% 100% / 0.05));
+
+    /* Shadows & Effects */
+    --shadow-museum: 0 25px 50px -12px hsl(155 85% 20% / 0.25);
+    --shadow-heritage: 0 20px 40px -10px hsl(155 85% 20% / 0.2);
+    --shadow-artifact: 0 15px 35px -5px hsl(155 25% 15% / 0.15);
+    --shadow-glow: 0 0 30px hsl(155 85% 20% / 0.3);
+
+    /* Interactive States */
+    --hover-heritage: 155 85% 25%;
+    --hover-liberation: 0 85% 50%;
+    --hover-golden: 45 90% 55%;
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-museum: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  /* Museum Glass Effect */
+  .glass {
+    @apply backdrop-blur-md bg-gradient-to-br from-white/10 to-white/5 border border-white/20;
+  }
+
+  /* Heritage Button Variants */
+  .btn-heritage {
+    @apply bg-gradient-to-r from-primary to-primary-light text-primary-foreground shadow-heritage hover:shadow-glow transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-liberation {
+    @apply bg-gradient-to-r from-secondary to-secondary-light text-secondary-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-golden {
+    @apply bg-gradient-to-r from-accent to-accent-light text-accent-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105;
+  }
+
+  /* Museum Card Styles */
+  .card-museum {
+    @apply bg-card border border-border rounded-lg shadow-artifact hover:shadow-museum transition-all duration-300 hover:scale-[1.02];
+  }
+
+  .card-exhibit {
+    @apply glass rounded-xl p-6 hover:bg-white/10 transition-all duration-300 border border-white/10;
+  }
+
+  /* Interactive Elements */
+  .artifact-hover {
+    @apply hover:shadow-glow transition-all duration-500 hover:scale-105 cursor-pointer;
+  }
+
+  /* Heritage Typography */
+  .text-heritage {
+    @apply text-primary font-semibold;
+  }
+
+  .text-liberation {
+    @apply text-secondary font-semibold;
+  }
+
+  .text-golden {
+    @apply text-accent font-semibold;
+  }
+
+  /* Tour Guide Styles */
+  .tour-button {
+    @apply relative overflow-hidden bg-gradient-to-r from-primary via-primary-light to-primary text-primary-foreground px-8 py-4 rounded-full shadow-heritage hover:shadow-glow transform hover:scale-105 transition-all duration-300;
+  }
+
+  .tour-button::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full;
+    transition: transform 0.6s;
+  }
+
+  .tour-button:hover::before {
+    @apply translate-x-full;
+  }
+
+  /* 360 Viewer Container */
+  .viewer-360 {
+    @apply relative w-full h-[600px] rounded-xl overflow-hidden shadow-museum border border-primary/20;
+  }
+
+  /* Timeline Styles */
+  .timeline-item {
+    @apply relative pl-8 pb-12 before:absolute before:left-0 before:top-2 before:w-4 before:h-4 before:rounded-full before:bg-primary before:shadow-glow;
+  }
+
+  .timeline-item::after {
+    content: '';
+    @apply absolute left-2 top-6 w-0.5 h-full bg-gradient-to-b from-primary via-primary-light to-transparent;
+  }
+
+  /* Audio Guide Styles */
+  .audio-controls {
+    @apply flex items-center gap-4 p-4 glass rounded-xl border border-white/20;
+  }
+}

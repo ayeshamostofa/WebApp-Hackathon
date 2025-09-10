@@ -3,6 +3,7 @@ import { HeroSection } from '@/components/home/HeroSection';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { ChatBot } from '@/components/chat/ChatBot';
 import { 
   MapPin, 
   Eye, 
@@ -339,6 +340,7 @@ const Index = () => {
           </Card>
         </div>
       </section>
+      <ChatBot />
     </div>
   );
 };
